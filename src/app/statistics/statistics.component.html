@@ -1,0 +1,26 @@
+<p>Confirmed: {{ coronaData?.confirmed }}</p>
+<p>Recovered: {{ coronaData?.recovered }}</p>
+<p>Deaths: {{ coronaData?.deaths }}</p>
+<p>
+  Fatality rate:
+  {{ coronaData?.deaths / coronaData?.confirmed | percent: ".2-2" }}
+</p>
+
+<select [(ngModel)]="selectedCountry" class="form-select" name="country" id="country" (change)="changeCountry()">
+  <option
+    *ngFor="let item of country"
+    [value]="item"
+    [selected]="item === 'Vietnam'"
+   >
+    {{ item }}
+  </option>
+</select>
+<div *ngFor="let item of countryData">
+  <p>Confirmed: {{ item.confirmed }}</p>
+<p>Recovered: {{ item.recovered }}</p>
+<p>Deaths: {{ item.deaths }}</p>
+<p>
+  Fatality rate:
+  {{ item.deaths / item.confirmed | percent: ".2-2" }}
+</p>
+</div>
