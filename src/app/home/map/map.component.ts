@@ -1,4 +1,4 @@
-import { CoronaService } from './../service/corona.service';
+import { CoronaService } from '../../service/corona.service';
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 
